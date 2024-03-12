@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.todo.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/kayitGecis"
+            app:destination="@id/yapilacaklarKayitFragment" />
+        <action
+            android:id="@+id/duzenleGecis"
+            app:destination="@id/yapilacaklarDuzenleFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/yapilacaklarKayitFragment"
+        android:name="com.example.todo.ui.fragment.YapilacaklarKayitFragment"
+        android:label="fragment_yapilacaklar_kayit"
+        tools:layout="@layout/fragment_yapilacaklar_kayit" >
+        <action
+            android:id="@+id/anasayfaGecis"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yapilacaklarDuzenleFragment2"
+        android:name="com.example.todo.ui.fragment.YapilacaklarDuzenleFragment"
+        android:label="fragment_yapilacaklar_duzenle"
+        tools:layout="@layout/fragment_yapilacaklar_duzenle" >
+        <action
+            android:id="@+id/duzenleAnasayfaGecis"
+            app:destination="@id/anasayfaFragment" />
+        <argument
+            android:name="toDo"
+            app:argType="com.example.todo.data.entity.ToDo" />
+    </fragment>
+</navigation>
